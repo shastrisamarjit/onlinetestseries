@@ -1,0 +1,88 @@
+
+{% load static %}
+<html>
+ <head>
+ <script>
+ </script>
+ <title>Online Test Series</title>
+ <script type="text/javascript"src="testseries.js"></script>
+ </head>
+ <body>
+  
+  <table align="center"border="0"bgcolor="lightblue">
+   <tr height="100"><th width="1500"><font size="60"color="black"face="Times New Roman">Online Test Series</font></th></tr>
+  <table align="center"border="0"bgcolor="white">
+    <tr height="5"><td></td></tr>
+  </table>
+      <table align="left"border="0"bgcolor="pink">
+       <tr height="70"><th width="150"><font size="4" color="black">Online Test Series</font></th></tr>
+       <tr bgcolor="white"height="4"><td></td></tr>
+       <tr height="50"><td><font size="3"color="black">Home</font></td></tr>
+       <tr bgcolor="white"height="4"><td></td></tr>
+       <tr height="50"><td><font size="3"color="black">Exam Calendar</font></td></tr>
+       <tr bgcolor="white"height="4"><td></td></tr>
+       <tr height="50"><td><font size="3"color="black">Gk & Current Affairs</font></td></tr>
+       <tr bgcolor="white"height="4"><td></td></tr>
+       <tr height="50"><td><font size="3"color="black">Blog</font></td></tr>
+       <tr bgcolor="white"height="4"><td></td></tr>
+       <tr height="50"><td><font size="3"color="black">Videos</font></td></tr>
+       <tr bgcolor="white"height="4"><td></td></tr>
+       <tr height="50"><td><font size="3"color="black">Free Live Classes</font></td></tr>
+       <tr bgcolor="white"height="4"><td></td></tr>
+       <tr height="50"><td><font size="3"color="black">Help</font></td></tr>
+      </table>
+      <table align="left"border="0">
+       <tr bgcolor="white"height="241">
+        <th width="210"><img src="{% static 'image/ssc.png' %}"width="200"></th>
+        <th width="205"><img src="{% static 'image/ssc2.png' %}"width="200"></th>
+        <th width="204"><img src="{% static 'image/images.png' %}"width="200"></th>
+        <th width="200"><img src="{% static 'image/ibps.png' %}"width="200"></th>
+       </tr>
+       <tr bgcolor="white"height="235">
+        <th width="200"><img src="{% static 'image/sbi.png' %}"width="200"></th>
+        <th width="200"><img src="{% static 'image/opsc.png' %}"width="200"></th>
+        <th width="200"><img src="{% static 'image/upsc.jpeg' %}"width="200"></th>
+        <th width="200"><img src="{% static 'image/rrb.png' %}"width="200"></th>
+       </tr>
+     <table align="center"border="0"bgcolor="lightblue">
+       <tr height="2"><th></th></tr>
+       <tr height="10"><th><font size="3"color="black">Notifications</font></th></tr>
+       <tr height="196"><th><marquee direction="up"width="100%">
+            <font size="3"color="green">
+                  csrf--------> Cross Site Request Forgery
+                  <br>
+                  csrf--------> Cross Site Request Forgery
+                  <br>
+                  csrf--------> Cross Site Request Forgery
+                  <br>
+                  csrf--------> Cross Site Request Forgery
+                  </font></marquee></th></tr>
+       <form action="{% url 'registerpage' %}"method="post">{% csrf_token %}
+       <tr height="10"><th><font size="3"color="black">New User
+                <button type="submit">Register</button>Here</font></th></tr></form>
+       <tr height="5"bgcolor="white"><td></td></tr>
+       <form action="{% url 'checklogin' %}"method="post">{% csrf_token %}
+       <tr height="10"><th width="250"><font size="4"color="black">Existing User Login Here</font></th></tr></th><tr>
+       <tr height="10"><th><input type="text"placeholder="Login Id"required name="l1"></th></tr>
+       <tr height="10"><th width="6"><input type="password"placeholder="password"name="l2"required></th></tr>
+       <tr><th><button type="submit">Login</button></th></tr>
+       </form>
+       <tr height="5"><th></th></tr>
+       <tr><th height="20">{% for x in messages %}
+           <font color="red">{{ x }}{% endfor %}</font></th></tr>
+       <tr><th><a href="#"><font color="black">About Us</font></a></th></tr>
+       <tr><th><a href="#"><font color="black">Help</font></a></th></tr>
+       <tr height="45"><th><a href="{% url 'adminpage' %}"><font color="black">Admin</font></a></th></tr>
+      </table>
+      </table>
+   <table align="left"border="0">
+    <tr height="3"><th></th></tr>
+    <tr height="40"bgcolor="#add8e6">
+	  <th width="1500"><a href="#"><font color="black">About Us</font></a></th>
+      <th width="1500"><a href="#"><font color="black">Products</font></a></th>
+      <th width="1500"><a href="#"><font color="black">Support Us</font></a></th>
+    </tr>
+   </table>
+ </body>
+</html>
+

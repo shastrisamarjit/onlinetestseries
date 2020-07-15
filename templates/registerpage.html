@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block main %}
+<html>
+ <head>
+  <title>Register Page</title>
+  <script type="text/javascript"src="registerpage.js"></script>
+ </head>
+  <body bgcolor="white">
+     <br>
+     <table align="center"bgcolor="#faebd7">
+       <tr><th height="30"colspan="2"><h1>Registration Page</h1></th></tr>
+        {{ student }}
+       <tr><th colspan="2"height="25"><button type="submit" onclick="alert('You Dont Have Knowledge About Rest-Api')">Pay Here</button></th></tr>
+      <form action="{% url 'saveregister' %}"method="post"enctype="multipart/form-data">
+      {% csrf_token %}
+       <tr><th colspan="2"height="25"><button type="submit">Submit</button></th></tr>
+      </form>
+       <tr><th colspan="2"height="25">{% for x in messages %}
+                                          <font color="green">{{ x }}</font>
+                                      {% endfor %}</th></tr>
+     </table>
+        <h1><a href="{% url 'main' %}"><font color="black">Back</font></a></h1>
+  </body>
+</html>
+{% endblock %}

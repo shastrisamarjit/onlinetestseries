@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block main %}
+    <table>
+      <tr bgcolor="black">
+        <th height="70"width="500"><a href="{% url 'showadminpage' %}"><font color="yellow">Home</font></a></th>
+        <th width="500"><a href="{% url 'adminpanel' %}"><font color="yellow">Admin Panel</font></a></th>
+        <th width="500"><a href="{% url 'main' %}"><font color="yellow">Logout</font></a></th>
+      </tr>
+      <tr><th height="425"colspan="4"><font size="50" color="orange">Home Page</font></th></tr>
+    </table>
+   {% endblock %}

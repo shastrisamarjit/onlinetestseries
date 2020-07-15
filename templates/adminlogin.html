@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block main %}
+<html>
+<body>
+   <br>
+   <br>
+   <form action="{% url 'adminlogin' %}"method="post">
+       {% csrf_token %}
+   <table align="center">
+       {{ Login }}
+      <tr><th height="20"></th></tr>
+      <tr><th colspan="2"><button type="submit">Submit</button></th></tr>
+      <tr><th height="30"colspan="2">{% for x in messages %}
+                   <font size="5" color="red">{{ x }}</font>
+              {% endfor %}</th></tr>
+   </table>
+   </form>
+    <h1><a href="{% url 'main' %}"><font color="black">Back</font></a></h1>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+</body>
+</html>
+{% endblock %}

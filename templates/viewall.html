@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% block main %}
+    {% include 'adminpagecommon.html' %}
+    <table align="center"><tr><th height="5"></th></tr></table>
+    <table align="left"><tr><th width="5"></th></tr></table>
+    <table align="left"border="1">
+       <tr bgcolor="#deb887"><th>Name</th>
+           <th>Email</th>
+           <th>Contact No</th>
+           <th>D.O.B</th>
+           <th>Gender</th>
+           <th>User Name</th>
+           <th>Password</th>
+           <th>Exam Type</th>
+       </tr>
+      {% for x in data %}
+       <tr bgcolor="#adff2f">
+           <th><font color="red">{{ x.name }}</font></th>
+           <th><font color="red">{{ x.email }}</font></th>
+           <th><font color="red">{{ x.con }}</font></th>
+           <th><font color="red">{{ x.dob }}</font></th>
+           <th><font color="red">{{ x.gen }}</font></th>
+           <th><font color="red">{{ x.usrname }}</font></th>
+           <th><font color="red">{{ x.pas }}</font></th>
+           <th>
+               {% for y in x.course.all %}
+                   <h4><font color="red">{{ y.coursename }}</font></h4>
+               {% endfor %}
+           </th>
+       </tr>
+      {% endfor  %}
+       <tr>
+           {% if data.has_previous %}
+              <th colspan="3">
+                <a href="{% url 'viewall' %}?pno={{ data.previous_page_number }}">Previous</a>
+              </th>
+           {% endif %}
+           {% if data.has_next %}
+              <th colspan="4">
+                  <a href="{% url 'viewall' %}?pno={{ data.next_page_number }}">Next</a>
+              </th>
+           {% endif %}
+       </tr>
+
+    </table>
+{% endblock %}

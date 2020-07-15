@@ -1,0 +1,15 @@
+{% block main %}
+    <table align="center">
+      <tr bgcolor="black">
+        <th height="70"width="500"><a href="{% url 'showadminpage' %}"><font color="yellow">Home</font></a></th>
+        <th width="500"><a href="{% url 'adminpanel' %}"><font color="yellow">Admin Panel</font></a></th>
+        <th width="500"><a href="{% url 'main' %}"><font color="yellow">Logout</font></a></th>
+      </tr>
+    </table>
+      <table align="left">
+        <tr bgcolor="#ffd700"><th height="105" width="55"><a href="{% url 'viewall' %}"><font color="black">View All</font></a></th></tr>
+        <tr bgcolor="#ffd700"><th height="105" width="55"><a href="{% url 'deletestudent' %}"><font color="black">Delete Student</font></a></th></tr>
+        <tr bgcolor="#ffd700"><th height="105" width="55"><a href="{% url 'facultypanel' %}"><font color="black">Course</font></a></th></tr>
+        <tr bgcolor="#ffd700"><th height="105" width="85"><a href="{% url 'coursedelete' %}"><font color="black">_____</font></a></th></tr>
+      </table>
+{% endblock %}
